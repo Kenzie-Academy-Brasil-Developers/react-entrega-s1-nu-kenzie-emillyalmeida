@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Form from "./components/form";
+import List from "./components/list";
 
 function App() {
   const [login, setlogin] = useState(false);
@@ -22,6 +23,22 @@ function App() {
           <section className="container-total">
             <section className="container-form">
               <Form add={addList} />
+              {listTransactions > 0 ? (
+                <section>
+                  <div>
+                    <p>Valor Total :</p>
+                    <span>O valor se refere as entradas</span>
+                  </div>
+                  <span>
+                    {listTransactions.reduce(
+                      (sum, valor) => sum + valor.preco,
+                      0
+                    )}
+                  </span>
+                </section>
+              ) : (
+                <div></div>
+              )}
             </section>
             <section className="conatiner-list">
               <div className="filtros">
@@ -30,7 +47,16 @@ function App() {
                 <button>Entradas</button>
                 <button>Despesas</button>
               </div>
-              <div className="financeiro"></div>
+              <div className="financeiro">
+                {listTransactions > 0 ? (
+                  <List listTransactions={listTransactions} />
+                ) : (
+                  <div>
+                    <h3>Vocẽ ainda não possui lançamentos</h3>
+                    <img src="../public/img/NoCard.svg" alt="sem lançamentos" />
+                  </div>
+                )}
+              </div>
             </section>
           </section>
         </>
