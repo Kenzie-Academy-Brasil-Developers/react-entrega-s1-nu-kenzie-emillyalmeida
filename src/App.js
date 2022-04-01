@@ -1,8 +1,14 @@
 import "./App.css";
 import { useState } from "react";
+import Form from "./components/form";
 
 function App() {
   const [login, setlogin] = useState(false);
+  const [listTransactions, setListTransactions] = useState([]);
+
+  const addList = (value) => {
+    return setListTransactions([...listTransactions, value]);
+  };
   return (
     <div className="App">
       {login ? (
@@ -14,7 +20,9 @@ function App() {
             <button onClick={() => setlogin(false)}>Inicio</button>
           </header>
           <section className="container-total">
-            <section className="container-form"></section>
+            <section className="container-form">
+              <Form add={addList} />
+            </section>
             <section className="conatiner-list">
               <div className="filtros">
                 <h3>Resumo finaceiro</h3>
