@@ -7,7 +7,9 @@ const Card = (transaction, index) => {
         <span>{tipo}</span>
       </div>
       <span>{valor}</span>
-      <button></button>
+      <button id={index}>
+        <img src="../../public/img/trash.svg" alt="trash" />
+      </button>
     </li>
   );
 };
