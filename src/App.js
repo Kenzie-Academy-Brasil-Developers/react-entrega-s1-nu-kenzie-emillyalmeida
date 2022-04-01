@@ -10,6 +10,13 @@ function App() {
   const addList = (value) => {
     return setListTransactions([...listTransactions, value]);
   };
+
+  const removeList = (value) => {
+    const remover = listTransactions.filter(
+      (transactions) => transactions.descricao !== value.descricao
+    );
+    return setListTransactions(remover);
+  };
   return (
     <div className="App">
       {login ? (
@@ -49,7 +56,10 @@ function App() {
               </div>
               <div className="financeiro">
                 {listTransactions > 0 ? (
-                  <List listTransactions={listTransactions} />
+                  <List
+                    remove={removeList}
+                    listTransactions={listTransactions}
+                  />
                 ) : (
                   <div>
                     <h3>Vocẽ ainda não possui lançamentos</h3>

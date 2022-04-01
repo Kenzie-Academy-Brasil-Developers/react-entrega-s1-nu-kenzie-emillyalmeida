@@ -5,7 +5,8 @@ const Form = (add) => {
   const [valor, setvalor] = useState(0);
   const [tipo, settipo] = useState("");
 
-  const transformObject = () => {
+  const transformObject = (event) => {
+    event.preventDefault();
     const data = {};
 
     data.descricao = descricao;
@@ -16,12 +17,12 @@ const Form = (add) => {
     } else {
       data.valor = valor;
     }
-
+    console.log(data);
     return add(data);
   };
 
   return (
-    <form onSubmit={(event) => event.preventDefault()}>
+    <form onSubmit={(event) => transformObject(event)}>
       <input
         type="text"
         placeholder="Digite aqui sua descrição"
@@ -51,7 +52,7 @@ const Form = (add) => {
           </select>
         </label>
       </div>
-      <button onClick={() => transformObject()}>Inserir Valor</button>
+      <button type="submit">Inserir Valor</button>
     </form>
   );
 };

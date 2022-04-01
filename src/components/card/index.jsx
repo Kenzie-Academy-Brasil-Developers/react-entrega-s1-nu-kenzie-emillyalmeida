@@ -1,13 +1,13 @@
-const Card = (transaction, index) => {
+const Card = ({ transaction }) => {
   const { descrição, tipo, valor } = transaction;
   return (
-    <li key={index}>
+    <li>
       <div>
         <h3>{descrição}</h3>
         <span>{tipo}</span>
       </div>
       <span>{valor}</span>
-      <button id={index}>
+      <button id={descrição}>
         <img src="../../public/img/trash.svg" alt="trash" />
       </button>
     </li>
