@@ -42,3 +42,7 @@
 .entrada {
   border-left: 5px solid #03b898;
 }
+
+.card-info button:hover {
+  background-color: #212529;
+}
