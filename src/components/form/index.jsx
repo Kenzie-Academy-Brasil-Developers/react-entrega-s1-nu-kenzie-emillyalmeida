@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const Form = (add) => {
+const Form = ({ add }) => {
   const [descricao, setdescricao] = useState("");
-  const [valor, setvalor] = useState(0);
+  const [valor, setvalor] = useState("");
   const [tipo, settipo] = useState("");
 
   const transformObject = (event) => {
@@ -15,8 +15,11 @@ const Form = (add) => {
     if (tipo === "Despesas") {
       data.valor = valor * -1;
     } else {
-      data.valor = valor;
+      data.valor = Number(valor);
     }
+    setdescricao("");
+    settipo("");
+    setvalor("");
     console.log(data);
     return add(data);
   };
@@ -28,6 +31,7 @@ const Form = (add) => {
         placeholder="Digite aqui sua descrição"
         value={descricao}
         onChange={(event) => setdescricao(event.target.value)}
+        required
       />
       <span>Ex:compras de roupa</span>
       <div className="preco-tipo">
@@ -38,6 +42,7 @@ const Form = (add) => {
             placeholder="R$"
             value={valor}
             onChange={(event) => setvalor(event.target.value)}
+            required
           />
         </label>
 
@@ -46,7 +51,9 @@ const Form = (add) => {
           <select
             value={tipo}
             onChange={(event) => settipo(event.target.value)}
+            required
           >
+            <option value=""></option>
             <option value="Entradas">Entradas</option>
             <option value="Despesas">Despesas</option>
           </select>

@@ -1,5 +1,80 @@
-.App {
-  text-align: center;
+/* .App {
+  
+} */
+@import url("https://fonts.googleapis.com/css2?family=Barriecito&family=Inter&family=Montserrat&family=Nunito&display=swap");
+
+:root {
+  --primary-color: #fd377e;
+  --primary2-color: #e34981;
+  --secundary: #03b898;
+  --gray4: #212529;
+  --gray3: #868e96;
+  --gray2: #e9ecef;
+}
+
+button {
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Nunito", sans-serif;
+}
+
+.Home {
+  background-color: var(--gray4);
+  width: 100vw;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.entrar {
+  width: 20%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-family: "Nunito", sans-serif;
+}
+
+.entrar h1 {
+  background-image: url("../public/img/Nu_Kenzie.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 40%;
+  height: 10%;
+  color: transparent;
+}
+
+.entrar h2 {
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.entrar p {
+  font-size: 16px;
+}
+
+.entrar button {
+  width: 70%;
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+.img-Home {
+  width: 40%;
+  height: 72%;
+}
+
+.img-Home div {
+  background-image: url("../public/img/Group_277.svg");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .App-header {

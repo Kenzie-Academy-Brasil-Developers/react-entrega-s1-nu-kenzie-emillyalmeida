@@ -1,15 +1,16 @@
-const Card = ({ transaction }) => {
-  const { descrição, tipo, valor } = transaction;
+const Card = ({ transaction, remover, index }) => {
+  const { descricao, tipo, valor } = transaction;
   return (
-    <li>
+    <li key={index}>
       <div>
-        <h3>{descrição}</h3>
+        <h3>{descricao}</h3>
         <span>{tipo}</span>
       </div>
       <span>{valor}</span>
-      <button id={descrição}>
-        <img src="../../public/img/trash.svg" alt="trash" />
-      </button>
+      <button
+        id={descricao}
+        onClick={(event) => remover(event.target.id)}
+      ></button>
     </li>
   );
 };

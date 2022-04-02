@@ -1,10 +1,10 @@
 import Card from "../card";
 
-const List = ({ listTransactions }) => {
+const List = ({ listTransactions, remove }) => {
   return (
     <ul>
       {listTransactions.map((transaction, index) => (
-        <Card transaction={transaction} key={index} />
+        <Card transaction={transaction} remover={remove} key={index} />
       ))}
     </ul>
   );

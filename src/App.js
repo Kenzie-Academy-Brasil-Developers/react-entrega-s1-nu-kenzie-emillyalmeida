@@ -1,3 +1,4 @@
+import "./reset.css";
 import "./App.css";
 import { useState } from "react";
 import Form from "./components/form";
@@ -12,11 +13,25 @@ function App() {
   };
 
   const removeList = (value) => {
+    console.log(value);
     const remover = listTransactions.filter(
-      (transactions) => transactions.descricao !== value.descricao
+      (transactions) => transactions.descricao !== value
     );
     return setListTransactions(remover);
   };
+
+  const filtros = (categoria) => {
+    if (categoria === "todos") {
+      return setListTransactions(listTransactions);
+    } else {
+      const filter = listTransactions.filter(
+        (itens) => itens.tipo === categoria
+      );
+      console.log(filter);
+      return <List remove={removeList} listTransactions={filter} />;
+    }
+  };
+
   return (
     <div className="App">
       {login ? (
@@ -30,7 +45,7 @@ function App() {
           <section className="container-total">
             <section className="container-form">
               <Form add={addList} />
-              {listTransactions > 0 ? (
+              {listTransactions.length > 0 ? (
                 <section>
                   <div>
                     <p>Valor Total :</p>
@@ -38,7 +53,7 @@ function App() {
                   </div>
                   <span>
                     {listTransactions.reduce(
-                      (sum, valor) => sum + valor.preco,
+                      (sum, valor) => sum + valor.valor,
                       0
                     )}
                   </span>
@@ -50,12 +65,27 @@ function App() {
             <section className="conatiner-list">
               <div className="filtros">
                 <h3>Resumo finaceiro</h3>
-                <button>Todos</button>
-                <button>Entradas</button>
-                <button>Despesas</button>
+                <button
+                  id="todos"
+                  onClick={(event) => filtros(event.target.id)}
+                >
+                  Todos
+                </button>
+                <button
+                  id="Entradas"
+                  onClick={(event) => filtros(event.target.id)}
+                >
+                  Entradas
+                </button>
+                <button
+                  id="Despesas"
+                  onClick={(event) => filtros(event.target.id)}
+                >
+                  Despesas
+                </button>
               </div>
               <div className="financeiro">
-                {listTransactions > 0 ? (
+                {listTransactions.length > 0 ? (
                   <List
                     remove={removeList}
                     listTransactions={listTransactions}
@@ -73,15 +103,13 @@ function App() {
       ) : (
         <section className="Home">
           <section className="entrar">
-            <h1>
-              <img src="../public/img/Nu_Kenzie.svg" alt="Nu kenzie" />
-            </h1>
-            <h2>Centralize o controle das finanças</h2>
+            <h1>''</h1>
+            <h2>Centralize o controle das suas finanças</h2>
             <p>de forma rapida e segura</p>
             <button onClick={() => setlogin(true)}>Inicar</button>
           </section>
           <section className="img-Home">
-            <img src="../public/img/Group_277.svg" alt="imagem do app" />
+            <div></div>
           </section>
         </section>
       )}
