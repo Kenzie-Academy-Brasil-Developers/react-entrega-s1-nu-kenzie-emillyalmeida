@@ -1,12 +1,17 @@
+import "./card.css";
+
 const Card = ({ transaction, remover, index }) => {
   const { descricao, tipo, valor } = transaction;
   return (
-    <li key={index}>
+    <li
+      key={index}
+      className={tipo === "Entradas" ? "card-info entrada" : "card-info"}
+    >
       <div>
         <h3>{descricao}</h3>
-        <span>{tipo}</span>
+        <p>{tipo}</p>
       </div>
-      <span>{valor}</span>
+      <span>R$ {valor.toFixed(2).replace(".", ",")}</span>
       <button
         id={descricao}
         onClick={(event) => remover(event.target.id)}
