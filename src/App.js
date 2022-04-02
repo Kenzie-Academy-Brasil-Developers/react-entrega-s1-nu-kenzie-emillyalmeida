@@ -37,9 +37,7 @@ function App() {
       {login ? (
         <>
           <header className="App-header">
-            <h1>
-              <img src="../public/img/Nu_Kenzie.svg" alt="Nu kenzie" />
-            </h1>
+            <h1>"</h1>
             <button onClick={() => setlogin(false)}>Inicio</button>
           </header>
           <section className="container-total">

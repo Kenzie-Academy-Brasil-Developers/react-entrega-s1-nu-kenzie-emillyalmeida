@@ -1,0 +1,63 @@
+:root {
+  --primary-color: #fd377e;
+  --primary2-color: #e34981;
+  --secundary: #03b898;
+  --gray4: #212529;
+  --gray3: #868e96;
+  --gray2: #e9ecef;
+  --gray1: #f8f9fa;
+}
+
+.form-contas {
+  border: 1px solid #e9ecef;
+  height: 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form-contas label {
+  color: #212529;
+  width: 85%;
+  font-size: 16px;
+}
+
+.form-contas input {
+  background-color: #f8f9fa;
+  height: 50px;
+  width: 90%;
+  border-radius: 5px;
+}
+
+.form-contas span {
+  font-size: 14px;
+  width: 85%;
+  color: #868e96;
+}
+
+.form-contas div {
+  display: flex;
+  width: 90%;
+}
+
+.form-contas div label input {
+  height: 40px;
+}
+
+.form-contas div label {
+  width: 47%;
+}
+
+.form-contas div label select {
+  width: 95%;
+  height: 35px;
+}
+
+.form-contas button {
+  width: 88%;
+  background-color: #fd377e;
+  color: #f8f9fa;
+  font-family: "Nunito", sans-serif;
+  font-weight: 700;
+}

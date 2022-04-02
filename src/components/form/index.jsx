@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./form.css";
 
 const Form = ({ add }) => {
   const [descricao, setdescricao] = useState("");
@@ -25,7 +26,8 @@ const Form = ({ add }) => {
   };
 
   return (
-    <form onSubmit={(event) => transformObject(event)}>
+    <form className="form-contas" onSubmit={(event) => transformObject(event)}>
+      <label htmlFor="input">Descrição</label>
       <input
         type="text"
         placeholder="Digite aqui sua descrição"
@@ -36,7 +38,7 @@ const Form = ({ add }) => {
       <span>Ex:compras de roupa</span>
       <div className="preco-tipo">
         <label>
-          valor
+          Valor
           <input
             type="number"
             placeholder="R$"
