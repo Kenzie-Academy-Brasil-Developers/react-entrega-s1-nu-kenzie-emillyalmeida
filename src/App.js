@@ -7,6 +7,7 @@ import List from "./components/list";
 function App() {
   const [login, setlogin] = useState(false);
   const [listTransactions, setListTransactions] = useState([]);
+  const [filtroOn, setFiltroOn] = useState("todos");
 
   const addList = (value) => {
     return setListTransactions([...listTransactions, value]);
@@ -22,13 +23,13 @@ function App() {
 
   const filtros = (categoria) => {
     if (categoria === "todos") {
-      return setListTransactions(listTransactions);
+      return listTransactions;
     } else {
       const filter = listTransactions.filter(
         (itens) => itens.tipo === categoria
       );
       console.log(filter);
-      return <List remove={removeList} listTransactions={filter} />;
+      return filter;
     }
   };
 
@@ -50,6 +51,7 @@ function App() {
                     <span>O valor se refere as entradas</span>
                   </div>
                   <span>
+                    <span>$ </span>
                     {listTransactions.reduce(
                       (sum, valor) => sum + valor.valor,
                       0
@@ -66,19 +68,19 @@ function App() {
                 <button
                   className="selected"
                   id="todos"
-                  onClick={(event) => filtros(event.target.id)}
+                  onClick={(event) => setFiltroOn(event.target.id)}
                 >
                   Todos
                 </button>
                 <button
                   id="Entradas"
-                  onClick={(event) => filtros(event.target.id)}
+                  onClick={(event) => setFiltroOn(event.target.id)}
                 >
                   Entradas
                 </button>
                 <button
                   id="Despesas"
-                  onClick={(event) => filtros(event.target.id)}
+                  onClick={(event) => setFiltroOn(event.target.id)}
                 >
                   Despesas
                 </button>
@@ -87,7 +89,7 @@ function App() {
                 {listTransactions.length > 0 ? (
                   <List
                     remove={removeList}
-                    listTransactions={listTransactions}
+                    listTransactions={filtros(filtroOn)}
                   />
                 ) : (
                   <div>

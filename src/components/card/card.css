@@ -9,6 +9,7 @@
   border-radius: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
+  box-sizing: inherit;
 }
 
 .card-info h3 {
@@ -31,9 +32,9 @@
   background-image: url("../../../public/img/trash.svg");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 75%;
-  width: 24px;
-  height: 24px;
+  background-size: 65%;
+  width: 22px;
+  height: 22px;
   background-color: #e9ecef;
   padding: 2px;
 }

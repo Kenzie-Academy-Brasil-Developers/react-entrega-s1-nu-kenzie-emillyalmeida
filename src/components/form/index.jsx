@@ -18,6 +18,7 @@ const Form = ({ add }) => {
     } else {
       data.valor = Number(valor);
     }
+
     setdescricao("");
     settipo("");
     setvalor("");
