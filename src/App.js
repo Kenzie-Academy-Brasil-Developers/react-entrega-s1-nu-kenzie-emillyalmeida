@@ -46,7 +46,7 @@ function App() {
               {listTransactions.length > 0 ? (
                 <section>
                   <div>
-                    <p>Valor Total :</p>
+                    <p>Valor Total:</p>
                     <span>O valor se refere as entradas</span>
                   </div>
                   <span>
@@ -92,7 +92,7 @@ function App() {
                 ) : (
                   <div>
                     <h3>Vocẽ ainda não possui lançamentos</h3>
-                    <div></div>
+                    <svg></svg>
                   </div>
                 )}
               </div>
