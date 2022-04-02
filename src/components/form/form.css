@@ -10,7 +10,7 @@
 
 .form-contas {
   border: 1px solid #e9ecef;
-  height: 48%;
+  height: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -52,6 +52,8 @@
 .form-contas div label select {
   width: 95%;
   height: 35px;
+  background-color: #f8f9fa;
+  border: none;
 }
 
 .form-contas button {
@@ -60,4 +62,6 @@
   color: #f8f9fa;
   font-family: "Nunito", sans-serif;
   font-weight: 700;
+  height: 45px;
+  font-size: 16px;
 }

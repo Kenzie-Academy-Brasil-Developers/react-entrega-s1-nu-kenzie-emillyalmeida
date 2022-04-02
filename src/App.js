@@ -64,6 +64,7 @@ function App() {
               <div className="filtros">
                 <h3>Resumo finaceiro</h3>
                 <button
+                  className="selected"
                   id="todos"
                   onClick={(event) => filtros(event.target.id)}
                 >
@@ -91,7 +92,7 @@ function App() {
                 ) : (
                   <div>
                     <h3>Vocẽ ainda não possui lançamentos</h3>
-                    <img src="../public/img/NoCard.svg" alt="sem lançamentos" />
+                    <div></div>
                   </div>
                 )}
               </div>
