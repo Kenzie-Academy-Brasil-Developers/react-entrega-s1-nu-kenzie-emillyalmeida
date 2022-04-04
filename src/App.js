@@ -48,7 +48,7 @@ function App() {
                 <section>
                   <div>
                     <p>Valor Total:</p>
-                    <span>O valor se refere as entradas</span>
+                    <span>O valor se refere ao saldo</span>
                   </div>
                   <span>
                     <span>$ </span>

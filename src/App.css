@@ -68,14 +68,14 @@ button {
 }
 
 .img-Home {
-  width: 40%;
+  width: 43%;
   height: 72%;
 }
 
 .img-Home div {
   background-image: url("../public/img/Group_277.svg");
   background-repeat: no-repeat;
-  background-size: 90%;
+  background-size: contain;
   width: 100%;
   height: 100%;
 }
