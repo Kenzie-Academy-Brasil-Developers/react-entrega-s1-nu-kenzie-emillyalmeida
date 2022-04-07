@@ -14,11 +14,9 @@ function App() {
   };
 
   const removeList = (value) => {
-    console.log(value);
     const remove = listTransactions.filter(
       (el, index) => index !== Number(value)
     );
-    console.log(remove);
     return setListTransactions(remove);
   };
 

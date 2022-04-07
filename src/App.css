@@ -35,8 +35,8 @@ button {
 }
 
 .entrar {
-  width: 20%;
-  height: 40%;
+  width: 80%;
+  height: 55%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -47,8 +47,8 @@ button {
   background-image: url("../public/img/Nu_Kenzie.svg");
   background-repeat: no-repeat;
   background-size: 100%;
-  width: 40%;
-  height: 12%;
+  width: 65%;
+  height: 10%;
   color: transparent;
 }
 
@@ -68,16 +68,7 @@ button {
 }
 
 .img-Home {
-  width: 43%;
-  height: 72%;
-}
-
-.img-Home div {
-  background-image: url("../public/img/Group_277.svg");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 100%;
-  height: 100%;
+  display: none;
 }
 
 .App-header {
@@ -111,18 +102,20 @@ button {
 }
 
 .container-total {
-  padding: 4% 12% 1% 12%;
+  padding: 5% 2% 1% 2%;
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
+  align-items: center;
   height: 89%;
 }
 
 .container-form {
-  width: 38%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  height: 80%;
-  justify-content: space-between;
+  height: 50vh;
+  justify-content: space-around;
 }
 
 .container-form section {
@@ -158,8 +151,10 @@ button {
 }
 
 .conatiner-list {
-  width: 45%;
-  height: 88%;
+  border-top: 2px solid #fd377e;
+  padding: 10px;
+  width: 100%;
+  height: 40vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -167,13 +162,14 @@ button {
 
 .conatiner-list .filtros {
   display: flex;
-  height: 12%;
+  height: 20%;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
 }
 .conatiner-list .filtros h3 {
   color: var(--gray4);
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 
@@ -195,7 +191,7 @@ button {
 }
 
 .financeiro {
-  height: 95%;
+  height: 80%;
 }
 .financeiro div {
   height: 100%;
@@ -208,13 +204,109 @@ button {
   color: var(--gray3);
   font-size: 24px;
   font-weight: 700;
-  height: 8%;
+  height: 15%;
 }
 
 .financeiro div svg {
   background-image: url("../public/img/NoCard.svg");
   background-repeat: no-repeat;
-  background-size: 100%;
-  height: 90%;
+  background-size: cover;
+  height: 67%;
   width: 99%;
+}
+
+@media screen and (min-width: 768px) {
+  .entrar h1 {
+    height: 15%;
+  }
+  .entrar h2 {
+    font-size: 50px;
+  }
+  .entrar p {
+    font-size: 20px;
+  }
+  .entrar button {
+    height: 50px;
+    font-size: 24px;
+  }
+  .container-form {
+    width: 70%;
+  }
+  .conatiner-list {
+    width: 70%;
+  }
+  .financeiro h3 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1020px) {
+  .img-Home {
+    width: 43%;
+    height: 72%;
+    display: flex;
+  }
+  .img-Home div {
+    background-image: url("../public/img/Group_277.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+  }
+  .entrar {
+    width: 20%;
+    height: 42%;
+  }
+  .entrar h1 {
+    height: 10%;
+  }
+  .entrar h2 {
+    font-size: 36px;
+  }
+  .entrar p {
+    font-size: 16px;
+  }
+
+  .container-total {
+    padding: 4% 12% 1% 12%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 89%;
+    align-items: baseline;
+  }
+  .container-form {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    height: 80%;
+    justify-content: space-between;
+  }
+  .conatiner-list {
+    border: none;
+    padding: 0;
+    width: 47%;
+    height: 88%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .conatiner-list .filtros {
+    display: flex;
+    height: 12%;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .conatiner-list .filtros h3 {
+    font-size: 18px;
+  }
+  .financeiro {
+    height: 90%;
+  }
+  .financeiro h3 {
+    height: 8%;
+  }
+  .financeiro div svg {
+    height: 90%;
+  }
 }
