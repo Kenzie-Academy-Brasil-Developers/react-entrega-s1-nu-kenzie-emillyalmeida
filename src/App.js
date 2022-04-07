@@ -15,20 +15,20 @@ function App() {
 
   const removeList = (value) => {
     console.log(value);
-    const remover = listTransactions.filter(
-      (transactions) => transactions.descricao !== value
+    const remove = listTransactions.filter(
+      (el, index) => index !== Number(value)
     );
-    return setListTransactions(remover);
+    console.log(remove);
+    return setListTransactions(remove);
   };
 
   const filtros = (categoria) => {
     if (categoria === "todos") {
       return listTransactions;
     } else {
-      const filter = listTransactions.filter(
-        (itens) => itens.tipo === categoria
-      );
-      console.log(filter);
+      const filter = listTransactions.filter((itens) => {
+        return itens.tipo === categoria;
+      });
       return filter;
     }
   };

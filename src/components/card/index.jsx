@@ -12,10 +12,7 @@ const Card = ({ transaction, remover, index }) => {
         <p>{tipo}</p>
       </div>
       <span>R$ {valor.toFixed(2).replace(".", ",")}</span>
-      <button
-        id={descricao}
-        onClick={(event) => remover(event.target.id)}
-      ></button>
+      <button id={index} onClick={(event) => remover(event.target.id)}></button>
     </li>
   );
 };
