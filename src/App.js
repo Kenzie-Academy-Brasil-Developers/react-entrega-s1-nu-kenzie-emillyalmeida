@@ -105,7 +105,7 @@ function App() {
             <h1>''</h1>
             <h2>Centralize o controle das suas finanças</h2>
             <p>de forma rapida e segura</p>
-            <button onClick={() => setlogin(true)}>Inicar</button>
+            <button onClick={() => setlogin(true)}>Iniciar</button>
           </section>
           <section className="img-Home">
             <div></div>
